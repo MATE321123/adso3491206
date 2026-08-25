@@ -38,10 +38,43 @@ body {
             }
         }
     }
-
+    &.Emmet {
+        background: linear-gradient(45deg, black, #7acb16);
+        main {
+            background: rgba(255,255,255,.15);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,.25);
+        section{
+            h2.subtitle{
+                color: #7acb16;
+                border-bottom: 2px dotted #7acb16;
+                padding-bottom: 0.4rem;
+                small {
+                    color: #fff;
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                }
+            }
+          h3 {
+              color: #7acb16;
+              margin: 0;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+            xmp {
+                background-color: #0009;
+                border-radius: 8px;
+                padding: 0.6rem;
+                margin: 0;
+            }
+        }
+    }
+}
     &.html {
-        background: linear-gradient(135deg, #ff9a3c, #ff6b6b);
-
+        background: linear-gradient(45deg, #ff9a3c, #ff6b6b);
         main {
             background: rgba(255,255,255,.15);
             backdrop-filter: blur(15px);
@@ -67,8 +100,8 @@ body {
         section {
             h2.subtitle {
                 color: #fff;
-                border-bottom: 2px solid rgba(255,255,255,.5);
-                padding-bottom: .5rem;
+                border-bottom: 2px dotted rgba(255,255,255,.5);
+                padding-bottom: 0.4rem;
             }
         }
     }
