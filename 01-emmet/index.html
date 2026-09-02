@@ -239,15 +239,28 @@
         </section>
         <section>
         <h2 class="subtitle">
-            17-challenge
-        <small>Genera texto de relleno.</small>
+            17-challenge <br>
+            <small>Generate emmet challenge.</small>
         </h2>
         <h3>Ejemplo:</h3>
-        <p>meta:vp ↔️</p>
+        header#header>nav.navbar.navbar-inverse>.container>div.navbar-header>(button.navbar-toggle[type="button"]>span.sr-only{Toggle navigation}+span.icon-bar*3)+a.navbar-brand[href="index.php"]>img[src="imgs/logo.png"][alt=""]^^div.collapse>ul.nav.navbar-nav>li>a.link[href="index.html"]{Inicio}^li.active.link>a[href="login.html"]{Ingresar}^li>a.link[href="registro.html"]{Registrarse}^li>a.link[href="contacto.html"]{Contacto}
         <h3>Resultado:</h3>
-<xmp>
-    <meta name="viewport" 
-</xmp>
+        <xmp><header id="header">
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header"><button class="navbar-toggle" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.php" class="navbar-brand"><img src="imgs/logo.png" alt=""></a></div>
+                    <div class="collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html" class="link">Inicio</a></li>
+                            <li class="active link"><a href="login.html">Ingresar</a></li>
+                            <li><a href="registro.html" class="link">Registrarse</a></li>
+                            <li><a href="contacto.html" class="link">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header></xmp>
+        <xmp>
         </section>
    </main>
 </body>
