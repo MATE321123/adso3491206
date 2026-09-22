@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprite Challenge CSS - Sprite Sheet</title>
+    <style>
+        body {
+            margin: 0;
+            border: 10px solid #fff;
+            background-color: #17a053;
+            min-height: 100dvh;
+            main {
+                header {
+                    figure.logo {
+                        background: url(imgs/spriteweb.png) no-repeat;
+                        background-position: -25px -420px;
+                        height: 140px;
+                        margin: 2rem auto;
+                        width: 160px;
+                    }
+                }
+            }
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            width: 100%;
+        }
+
+        nav a {
+            flex: 1;
+            text-decoration: none;
+            background-color: #0d5c2e;
+            color: #fff;
+            text-align: center;
+            padding: 12px 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-bottom: 3px solid #fff;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0a4623;
+        }
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 0.8rem;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: #006b30;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .card {
+            background-color: #fff;
+            flex: 1;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #000;
+            font-size: 1rem;
+        }
+
+        .sprite-img {
+            background-image: url('tu_imagen_sprite_sheet.jpg'); 
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 200px; 
+            border: 1px solid #ccc;
+            background-size: 800px 600px; 
+        }
+
+       
+        .card:nth-child(1) .sprite-img {
+            background-position: -500px 200px; /* Botella 1 */
+        }
+        .card:nth-child(2) .sprite-img {
+            background-position: -400px -10px; /* Ajusta para la Botella 2 */
+        }
+        .card:nth-child(3) .sprite-img {
+            background-position: -400px -10px; /* Ajusta para la Botella 3 */
+        }
+
+        /* --- Sección Inferior (Texto y Lata) --- */
+        .content-section {
+            background-color: #fff;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        /* Coordenadas para el Logo Circular (Centro abajo en tu imagen) */
+        .sprite-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background-image: url(imgs/spriteweb.png);
+            background-repeat: no-repeat;
+            background-position: -300px -500px; /* Ajusta según tu imagen */
+            background-size: 800px 600px;
+        }
+
+        .text-content {
+            flex: 2;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        .can-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .can-image .sprite-can {
+            background-image: url(imgs/spriteweb.png);
+            background-repeat: no-repeat;
+            background-position: -90px -210px; /* Ajusta según tu imagen */
+            background-size: 800px 600px;
+            width: 100px;
+            height: 180px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .cards-container {
+                flex-direction: column;
+            }
+
+            .content-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .text-content {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <!-- Logo Superior -->
+        <header class="logo-container">
+            <figure class="logo"></figure>
+        </header>
+
+        <!-- Menú de Navegación -->
+        <nav>
+            <a href="javascript:;">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Portafolio</a>
+            <a href="#">Servicios</a>
+            <a href="#" class="active">Contacto</a>
+        </nav>
+
+        <!-- Sección de Tarjetas -->
+        <section class="cards-container">
+            <article class="card">
+                <h3>Sprite 01</h3>
+                <div class="sprite-img"></div>
+            </article>
+            <article class="card">
+                <h3>Sprite 02</h3>
+                <div class="sprite-img"></div>
+            </article>
+            <article class="card">
+                <h3>Sprite 03</h3>
+                <div class="sprite-img"></div>
+            </article>
+        </section>
+
+        <!-- Sección de Contenido -->
+        <section class="content-section">
+            <div class="sprite-icon"></div>
+            
+            <div class="text-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam minima blanditiis porro corporis incidunt dolorum quas, exercitationem quam voluptatibus maxime perspiciatis, hic iure quos cumque necessitatibus sit architecto facere aperiam fugit voluptates. Cumque, delectus error quod facilis odio suscipit culpa quis? Ullam autem maxime nostrum reprehenderit mollitia.
+                </p>
+            </div>
+
+            <div class="can-image">
+                <div class="sprite-can"></div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
