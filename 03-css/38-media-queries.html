@@ -6,7 +6,9 @@
     <title>Layout GTA Responsive</title>
     <link rel="stylesheet" href="src/css/style.css">
 <style>
-
+        /* =========================================
+           CONFIGURACIÓN GENERAL Y FONDO
+           ========================================= */
         body {
             background-image: url(imgs/Atardecer.png); 
             background-size: cover;
@@ -28,6 +30,9 @@
             box-sizing: border-box;
         }
 
+        /* =========================================
+           HEADER Y LOGO
+           ========================================= */
         main header {
             margin: 20px auto; 
             width: 100%;
@@ -38,13 +43,15 @@
         figure.logo {
             background: url(imgs/logogta3.png) no-repeat center center;
             background-size: contain;
-            height: 400px;
-            width: 800px; 
-            max-width: 100%;
+            height: 350px; 
+            width: 100%; 
+            max-width: 1000px; 
             margin: 0 auto 30px auto;
         }
 
-
+        /* =========================================
+           GALERÍA DE TARJETAS
+           ========================================= */
         main section.gallery {
             display: flex;
             justify-content: center; 
@@ -75,13 +82,13 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.8);
         }
 
-        
-        main section.gallery a.gallery01 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/Yeison.png); background-size: cover; background-position: center; }
-        main section.gallery a.gallery02 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/Lucia.png); background-size: cover; background-position: center; }
-        main section.gallery a.gallery03 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/cal.jpg); background-size: cover; background-position: center; }
-        main section.gallery a.gallery04 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/Raul_Bautista.jpg); background-size: cover; background-position: center; }
+        /* Imágenes de las tarjetas */
+        main section.gallery a.gallery01 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/Yeison.png); background-size: cover; background-position: center top; }
+        main section.gallery a.gallery02 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/Lucia.png); background-size: cover; background-position: center top; }
+        main section.gallery a.gallery03 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/cal.jpg); background-size: cover; background-position: center top; }
+        main section.gallery a.gallery04 { background-image: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.9) 100%), url(imgs/Raul_Bautista.jpg); background-size: cover; background-position: center top; }
 
-        
+        /* Texto dentro de las tarjetas */
         main section.gallery a h3 {
             position: absolute;
             bottom: 15px;
@@ -92,6 +99,9 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
+        /* =========================================
+           VENTANA EMERGENTE (MODAL)
+           ========================================= */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -145,6 +155,9 @@
             transform: translateY(0);
         }
 
+        /* =========================================
+           SECCIÓN DE CONTENIDO (CAJAS BLANCAS)
+           ========================================= */
         main section.content {
             background-color: rgba(0, 0, 0, 0.5);
             margin: 40px auto;
@@ -197,37 +210,79 @@
             font-size: 1.1rem; 
         }
 
+        /* =========================================
+           MEDIA QUERIES (RESPONSIVE)
+           ========================================= */
+
+        /* --- VISTA TABLET (Menos de 1280px) --- */
+        @media (max-width: 1280px) {
+            figure.logo {
+                height: 250px; 
+            }
+
+            main section.gallery {
+                flex-wrap: wrap; 
+            }
+            main section.gallery a {
+                flex: 1 1 45%; 
+                height: 300px; 
+            }
+        }
+
+        /* --- VISTA CELULAR (Menos de 800px) --- */
         @media (max-width: 800px) {
             body {
                 border: 5px solid #fff; 
             }
             
             figure.logo {
-                height: 200px; 
-                width: 100%;
+                height: 150px; 
             }
 
             main section.gallery {
-                flex-direction: column;
+                flex-direction: column; 
                 gap: 15px; 
             }
             main section.gallery a {
-                height: 180px; 
+                height: 250px; 
                 width: 100%;
+                flex: none; 
             }
             
-            main section.content article {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+            main section.content {
+                padding: 15px; 
             }
+
+            main section.content article {
+                flex-direction: column; 
+                align-items: stretch; 
+                text-align: left;
+                gap: 15px;
+                padding: 15px; 
+                /* Forzamos a que la caja se adapte al contenido y no se estire */
+                height: auto; 
+            }
+
+            /* LA SOLUCIÓN AL ESPACIO EN BLANCO: */
             main section.content article div.image1 {
                 width: 100%; 
-                max-width: 300px;
+                max-width: 100%; 
+                height: auto; 
+                aspect-ratio: 16 / 9; /* Mantiene la proporción rectangular perfecta sin huecos */
+                border-radius: 8px;
+                background-size: cover;
+                background-position: center;
+                flex-shrink: 0;
             }
+
             main section.content article div.text {
                 width: 100%;
-                padding-right: 0;
+                padding-right: 0; 
+                font-size: 0.95rem; 
+                line-height: 1.5rem;
+                /* Eliminamos cualquier margen que pueda estirar la caja */
+                margin: 0; 
+                flex: none; 
             }
         }
     </style>
@@ -235,26 +290,39 @@
 
 <body>
     <main>
-    
+        <!-- LOGO -->
         <header>
             <figure class="logo"></figure>
         </header>
 
+        <!-- GALERÍA DE TARJETAS -->
         <section class="gallery">
-            <a href="#modal1" class="gallery01">
+            <a href="#modal" class="gallery01">
                 <h3>Jason</h3>
             </a>
             <a href="#modal" class="gallery02">
                 <h3>Lucia</h3>
             </a>
             <a href="#modal" class="gallery03">
-                <h3>Cal </h3>
+                <h3>Cal</h3>
             </a>
             <a href="#modal" class="gallery04">
                 <h3>Raul</h3>
             </a>
         </section>
 
+        <!-- VENTANA EMERGENTE (MODAL) -->
+        <div id="modal" class="modal-overlay">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="modal-content">
+                <h2>¡Personaje Seleccionado!</h2>
+                <p>Has hecho clic en una de las tarjetas. Aquí puedes poner la información detallada del personaje, imágenes grandes o lo que necesites.</p>
+                <p>Para cerrar esta ventana, haz clic en la X o fuera de este cuadro.</p>
+            </div>
+            <a href="#" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></a>
+        </div>
+
+        <!-- CONTENIDO (4 CAJAS BLANCAS) -->
         <section class="content">
             <article>
                 <div class="image1"></div>
