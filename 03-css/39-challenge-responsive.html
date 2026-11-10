@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Zelda Style</title>
+    <link rel="stylesheet" href="src/css/style.css">
+<style>
+        /* CONFIGURACIÓN GENERAL Y FONDO */
+        body {
+            /* Fondo general (El bosque con Link y Zelda) */
+            background-image: url(imgs/Atardecer.png); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #fff;
+            border: 10px solid #fff;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* HEADER (Solo Logo) */
+        main header {
+            margin: 40px auto 20px auto; 
+            width: 1000px; /* Ancho ajustado para que coincida con las tarjetas */
+            text-align: center;
+        }
+
+        main header div.logo {
+            background: url(imgs/logogta.jpg) no-repeat center center;
+            background-size: contain;
+            height: 150px;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        /* NUEVA SECCIÓN GALLERY (ESTILO TARJETAS RECTANGULARES Y JUNTAS) */
+        main section.gallery {
+            display: flex;
+            justify-content: center; /* Centra todo el bloque de tarjetas */
+            gap: 10px; /* Espacio pequeño entre tarjetas (casi juntas) */
+            margin: 40px auto;
+            width: 1000px; /* Mismo ancho que el header y el content */
+            box-sizing: border-box;
+        }
+
+        main section.gallery div {
+            position: relative;
+            height: 220px; /* Altura de la tarjeta */
+            width: 240px;  /* Ancho aumentado para hacerlas rectangulares */
+            border-radius: 10px; /* Bordes redondeados sutiles como en la foto */
+            cursor: pointer;
+            background-color: #222;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            /* Degradado oscuro en la parte inferior para leer el texto */
+            background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%);
+        }
+
+        /* Efecto al pasar el ratón por las tarjetas */
+        main section.gallery div:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+            z-index: 2; /* Para que la tarjeta se levante por encima de las demás */
+        }
+
+        /* Asignación de imágenes a cada tarjeta (CAMBIA LOS NOMBRES POR LOS TUYOS) */
+        main section.gallery div.gallery01 { background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%), url(imgs/Yeison.png); background-size: cover; background-position: center; }
+        main section.gallery div.gallery02 { background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%), url(imgs/Lucia.png); background-size: cover; background-position: center; }
+        main section.gallery div.gallery03 { background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%), url('ganondorf.jpg'); background-size: cover; background-position: center; }
+        main section.gallery div.gallery04 { background-image: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.9) 100%), url('darunia.jpg'); background-size: cover; background-position: center; }
+
+        /* Texto dentro de las tarjetas */
+        main section.gallery div h3 {
+            position: absolute;
+            bottom: 15px;
+            left: 15px; /* Ajustado a la izquierda */
+            margin: 0;
+            color: #fff;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* TEXTO "Explore Hyrule" */
+        .explore-text {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            width: 100%;
+            display: block;
+        }
+
+        /* SECCIÓN DE CONTENIDO */
+        main section.content {
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 40px auto;
+            padding: 20px;
+            width: 960px; /* Ajustado para mantener la misma línea visual */
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+        main section.content article {
+            background-color: #fff;
+            color: #333;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.2s ease-in;
+        }
+        main section.content article:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+            color: #17a053;
+        }
+        main section.content article:last-child {
+            margin-bottom: 0;
+        }
+        main section.content article div {
+            display: inline-block;
+            vertical-align: top;
+        }
+        main section.content article div.text {
+            font-family: Verdana;
+            text-align: justify;
+            line-height: 1.5rem;
+            width: 480px; /* Ajustado al nuevo ancho */
+        }
+        main section.content article div.image1,
+        main section.content article div.image2 {
+            height: 148px;
+            width: 200px;
+            border-radius: 10px;
+        }
+        main section.content article div.image1 {
+            margin-top: 24px;
+            background-color: #ccc; 
+        }
+        main section.content article div.image2 {
+            background-color: #ccc;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 40px auto;
+            padding: 20px;
+            width: 960px;
+            border-radius: 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        footer div.menu-footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        footer div.menu-footer ul li {
+            color: #333;
+            font-family: Verdana;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        footer div.menu-footer ul li:hover {
+            color: #17a053;
+            border-bottom: 4px solid #17a053;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- H E A D E R (Solo el Logo) -->
+        <header>
+            <div class="logo"></div>
+        </header>
+
+        <!-- G A L L E R Y (Estilo Tarjetas Zelda de la foto) -->
+        <section class="gallery">
+            <div class="gallery01">
+                <h3>Link</h3>
+            </div>
+            <div class="gallery02">
+                <h3>Zelda</h3>
+            </div>
+            <div class="gallery03">
+                <h3>Ganondorf</h3>
+            </div>
+            <div class="gallery04">
+                <h3>Darunia</h3>
+            </div>
+        </section>
+
+        <!-- Texto inferior de las tarjetas -->
+        <span class="explore-text">Explore Hyrule</span>
+
+        <!-- C O N T E N T -->
+        <section class="content">
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed itaque nihil possimus fugiat doloribus quis ab rem error nemo? Ipsa error officia eos nulla dolores earum tempore voluptate alias illum consequatur, fuga, nobis repellat architecto maiores!
+                </div>
+                <div class="image2"></div>
+            </article>
+            <article>
+                <div class="image1"></div>
+                <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed itaque nihil possimus fugiat doloribus quis ab rem error nemo? Ipsa error officia eos nulla dolores earum tempore voluptate alias illum consequatur, fuga, nobis repellat architecto maiores!
+                </div>
+                <div class="image2"></div>
+            </article>
+        </section>
+
+        <!-- F O O T E R -->
+        <footer>
+            <div class="menu-footer">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Portfolio</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
