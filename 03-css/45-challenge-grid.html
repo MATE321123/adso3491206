@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45-Challenge Grid</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        .galeria {
+            display: grid;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            gap: 10px;
+        }
+
+        .galeria div {
+            background: #8aa4e8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Galería 1 - Wano */
+        .galeria-wano {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                "a b c"
+                "d b e"
+                "f f g";
+        }
+
+        .galeria-wano .a { grid-area: a; }
+        .galeria-wano .b { grid-area: b; }
+        .galeria-wano .c { grid-area: c; }
+        .galeria-wano .d { grid-area: d; }
+        .galeria-wano .e { grid-area: e; }
+        .galeria-wano .f { grid-area: f; }
+        .galeria-wano .g { grid-area: g; }
+
+        /* Galería 2 - Villanos */
+        .galeria-villanos {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                "a a b c"
+                "a a d d"
+                "e f d d";
+        }
+
+        .galeria-villanos .a { grid-area: a; }
+        .galeria-villanos .b { grid-area: b; }
+        .galeria-villanos .c { grid-area: c; }
+        .galeria-villanos .d { grid-area: d; }
+        .galeria-villanos .e { grid-area: e; }
+        .galeria-villanos .f { grid-area: f; }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>45-Challenge Grid</h1>
+             <img src="../src/imgs/logo-css.png" alt="css">
+            <h3>Grid gallery</h3>
+        </header>
+        <section>
+            <h3>Luxury Cars</h3>
+            <div class="galeria galeria-wano">
+                <div class="a"><img src="imgs/nissan3.jpg" alt="gear 5"></div>
+                <div class="b"><img src="imgs/lambo.jpg" alt="arco de wano"></div>
+                <div class="c"><img src="imgs/bmw.jpg" alt="kaido"></div>
+                <div class="d"><img src="imgs/ferrari.jpg" alt="luffy"></div>
+                <div class="e"><img src="imgs/maclaren.jpg" alt="zoro"></div>
+                <div class="f"><img src="imgs/Porsche.jpg" alt="porsche"></div>
+                <div class="g"><img src="imgs/Chiron.jpg" alt="chiron"></div>
+            </div>
+        </section>
+        <section>
+            <h3>Peaky Blinders</h3>
+            <div class="galeria galeria-villanos">
+                <div class="a"><img src="imgs/combo.jpg" alt="imu"></div>
+                <div class="b"><img src="imgs/thomas4.jpg" alt="gorosei"></div>
+                <div class="c"><img src="imgs/arthur.jpg" alt="xebec"></div>
+                <div class="d"><img src="imgs/present.jpg" alt="barbanegra"></div>
+                <div class="e"><img src="imgs/jhon.jpg" alt="doflamingo"></div>
+                <div class="f"><img src="imgs/los5.jpg" alt="kaido 2"></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
